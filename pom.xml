@@ -28,7 +28,7 @@
 
     <groupId>com.allogy</groupId>
     <artifactId>allogy-maven-pom-oss</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <description>
@@ -44,7 +44,7 @@
         <connection>scm:git:git@github.com:Allogy/allogy-maven-pom-oss.git</connection>
         <developerConnection>scm:git:git@github.com:Allogy/allogy-maven-pom-oss.git</developerConnection>
         <url>https://github.com/Allogy/allogy-maven-pom-oss</url>
-        <tag>1.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <prerequisites>
