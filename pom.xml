@@ -87,6 +87,7 @@
                     <configuration>
                         <localCheckout>true</localCheckout>
                         <useReleaseProfile>true</useReleaseProfile>
+                        <arguments>-Psonatype-oss-release -DperformRelease=true</arguments>
                     </configuration>
                 </plugin>
                 <plugin>
