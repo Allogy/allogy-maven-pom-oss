@@ -54,6 +54,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.7</java.version>
     </properties>
 
     <build>
@@ -64,9 +65,28 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.2</version>
                     <configuration>
-                        <source>1.6</source>
-                        <target>1.6</target>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <compilerArgument>-Xlint:all</compilerArgument>
+                        <showWarnings>true</showWarnings>
+                        <showDeprecation>true</showDeprecation>
                     </configuration>
+                    <executions>
+                        <execution>
+                            <!--
+                            This is the default Maven execution for testCompile. This pom file is essentially
+                            overriding the configuration for only the testCompile so that test compilation
+                            does not produce warnings.
+                            -->
+                            <id>default-testCompile</id>
+                            <configuration>
+                                <showWarnings>false</showWarnings>
+                            </configuration>
+                            <goals>
+                                <goal>testCompile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
